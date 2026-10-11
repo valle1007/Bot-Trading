@@ -1,23 +1,32 @@
-# 🤖 Personal Algorithmic Trading Bot
+# Bot de Trading Algorítmico con Alpaca Markets
 
-Un corredor personal automatizado diseñado bajo principios de ingeniería de software de misión crítica. Este sistema ejecuta estrategias cuantitativas, gestiona riesgos en tiempo real y opera de forma desatendida en entornos de pruebas (*Paper Trading*).
+Sistema modular desarrollado en Python para la ejecución automatizada de estrategias de trading en el entorno de pruebas (*Paper Trading*) de Alpaca Markets, utilizando dinero virtual ($100,000 USD simulados) y mecanismos integrados de gestión de riesgo.
 
-## 🛠️ Stack Tecnológico
-* **Lenguaje:** Python 3.10+
-* **Librerías:** Pandas, Requests, TA (Análisis Técnico)
-* **Broker / API:** Alpaca Markets REST & WebSockets
-* **Infraestructura:** Docker / VPS (Preparado para despliegue 24/7)
+---
 
-## 🛡️ Características de Seguridad y Gestión de Riesgo
-* **Position Sizing Automatizado:** Cálculo dinámico para limitar la exposición por operación.
-* **Stop Loss Dinámico:** Protección obligatoria integrada por cada orden ejecutada.
-* **Kill-Switch de Emergencia:** Apagado automático, cancelación de órdenes pendientes y liquidación de posiciones ante umbrales de pérdida diaria críticos.
+## 🚀 Características Principales
 
-## 📁 Estructura del Proyecto
-```text
-personal-trading-bot/
-├── venv/                  # Entorno virtual aislado (ignorado en git)
-├── .env                   # Credenciales privadas de API (ignorado en git)
-├── .gitignore             # Archivos excluidos del control de versiones
-├── main.py                # Script principal de conexión y ejecución
-└── README.md              # Documentación del proyecto
+1. **Autenticación y Seguridad:** Conexión cifrada y segura con la API de Alpaca utilizando variables de entorno (`.env`) excluidas del control de versiones.
+2. **Monitoreo de Cuenta:** Consulta automatizada del saldo disponible (*Cash*), estado de la cuenta y valor total del portafolio.
+3. **Datos de Mercado en Tiempo Real:** Extracción de cotizaciones precisas de activos (ej. AAPL) mediante endpoints oficiales de Alpaca Data.
+4. **Gestión de Riesgo Avanzada (Bracket Orders):** Envío de órdenes al mercado vinculadas nativamente a límites automáticos de **Stop-Loss** (protección ante caídas) y **Take-Profit** (aseguramiento de ganancias).
+5. **Control de Posiciones:** Monitoreo activo de la cartera y cálculo de ganancias/pérdidas no realizadas (*P&L*).
+
+---
+
+## 🛠️ Tecnologías y Requisitos
+
+* **Python 3.10+**
+* **Librerías principales:** 
+  * `requests` (para peticiones HTTP a la API REST)
+  * `python-dotenv` (para manejo seguro de credenciales)
+* **Broker:** Alpaca Markets (API Paper Trading)
+
+---
+
+## ⚙️ Configuración e Instalación
+
+1. **Clona el repositorio:**
+   ```bash
+   git clone [https://github.com/valle1007/Bot-Trading.git](https://github.com/valle1007/Bot-Trading.git)
+   cd Bot-Trading
